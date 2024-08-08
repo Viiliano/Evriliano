@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Output Transaction</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        h3 {
+            text-align: center;
+        }
+        hr {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h3>Output Transaction</h3>
+    <hr>
+    <table id="output-table"></table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            var transactionData = JSON.parse(localStorage.getItem('transactionData'));
+
+            var table = document.getElementById('output-table');
+
+            var rows = [
+                { label: 'Riot ID', value: transactionData['Masukkan'] },
+                { label: 'Nominal Top Up', value: transactionData['Pilih'] },
+                { label: 'Pembayaran', value: transactionData['Pembayaran'] },
+                { label: 'E-Mail', value: transactionData['Email'] }
+            ];
+
+            rows.forEach(function (row) {
+                var tr = document.createElement('tr');
+                var tdLabel = document.createElement('td');
+                tdLabel.textContent = row.label;
+                tr.appendChild(tdLabel);
+
+                var tdValue = document.createElement('td');
+                tdValue.textContent = row.value;
+                tr.appendChild(tdValue);
+
+                table.appendChild(tr);
+            });
+        });
+    </script>
+</body>
+</html>

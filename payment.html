@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Transaction</title>
+    <style>
+        body {
+            background-color: beige;
+        }
+        table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        input[type="text"], select {
+            width: 50%;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: 150px;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: rebeccapurple;
+        }
+        input[type="reset"] {
+            background-color: #cb0101;
+        }
+    </style>
+</head>
+<body>
+    <h2><b>Form Transaction</b></h2>
+    <form id="transaction-form">
+        <hr>
+        <table>
+            <tr>
+                <td>Masukkan Riot ID Anda</td>
+                <td>: <input type="text" name="Masukkan" size="20" required></td>
+            </tr>
+            <tr>
+                <td>Pilih Nominal Top Up</td>
+                <td>: 
+                    <select name="Pilih" required>
+                        <option value="130 Points | Rp. 13500">130 Points | Rp. 13500</option>
+                        <option value="450 Points | Rp. 40000">450 Points | Rp. 40000</option>
+                        <option value="600 Points | Rp. 68000">600 Points | Rp. 68000</option>
+                        <option value="780 Points | Rp. 89000">780 Points | Rp. 89000</option>
+                        <option value="1000 Points | Rp. 110000">1000 Points | Rp. 110000</option>
+                        <option value="1234 Points | Rp. 130000">1234 Points | Rp. 130000</option>
+                        <option value="1890 Points | Rp. 199000">1890 Points | Rp. 199000</option>
+                        <option value="3000 Points | Rp. 270000">3000 Points | Rp. 270000</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Pilih Pembayaran</td>
+                <td>: 
+                    <input type="radio" name="Pembayaran" value="Dana" required>Dana 
+                    <input type="radio" name="Pembayaran" value="Gopay" required>Gopay 
+                    <input type="radio" name="Pembayaran" value="Shopeepay" required>Shopeepay
+                </td>
+            </tr>
+            <tr>
+                <td>E-Mail</td>
+                <td>: <input type="email" name="Email" size="20" required></td>
+            </tr>
+        </table>    
+        <hr>
+        <div class="button-container">
+            <input type="submit" value="Beli Sekarang">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('transaction-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            var formData = new FormData(event.target);
+            var transactionData = {};
+            formData.forEach((value, key) => transactionData[key] = value);
+
+            localStorage.setItem('transactionData', JSON.stringify(transactionData));
+
+            window.location.href = 'receipts.html';
+        });
+    </script>
+</body>
+</html>

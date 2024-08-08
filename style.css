@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-y: scroll;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.marquee-container {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 80%;
+    padding: 10px;
+}
+
+h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+
+.cards-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #333;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+p {
+    color: #555;
+    font-size: 16px;
+}
+
+.payment-link {
+    background: rebeccapurple;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.payment-link:hover {
+    background: #cb0101;
+}
+
+.menu{
+    background-color: plum;
+    text-align: center;
+}
+.nav-bar {
+    background-color: plum;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    height: 28%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    margin: 0 15px;
+}
+
+.gallery {
+    background-color: antiquewhite;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.gallery-img {
+    width: 30%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
